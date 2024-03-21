@@ -1,0 +1,4 @@
+Install curl command from terminal 2:
+docker exec -it ex1.4 bash
+apt upadte
+apt install curl

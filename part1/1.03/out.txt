@@ -1,0 +1,26 @@
+❯ docker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+5d3b2c2d21bb: Pull complete 
+3fc2062ea667: Pull complete 
+75adf526d75b: Pull complete 
+965d4bbb586a: Pull complete 
+4f4fb700ef54: Pull complete 
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+❯ docker run -d --rm --name secret-message devopsdockeruh/simple-web-service:ubuntu
+337b932f0b61e6d909d7193be674508f64a0f39fd56323fa1e8b873352ca52b8
+❯ docker exec -it 337 bash
+root@337b932f0b61:/usr/src/app# ls
+server  text.log
+root@337b932f0b61:/usr/src/app# tail -f ./text.log
+2024-03-21 10:04:42 +0000 UTC
+2024-03-21 10:04:44 +0000 UTC
+2024-03-21 10:04:46 +0000 UTC
+2024-03-21 10:04:48 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2024-03-21 10:04:50 +0000 UTC
+2024-03-21 10:04:52 +0000 UTC
+2024-03-21 10:04:54 +0000 UTC
+2024-03-21 10:04:56 +0000 UTC
+2024-03-21 10:04:58 +0000 UTC
