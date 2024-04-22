@@ -1,0 +1,17 @@
+❯ docker compose up
+WARN[0000] /home/giang/Desktop/devops-with-docker/part2/2.02/docker-compose.yml: `version` is obsolete 
+[+] Running 1/2
+ ✔ Network 202_default        Created                                                                                                                                0.4s 
+ ⠹ Container 202-simpleweb-1  Created                                                                                                                                0.2s 
+Attaching to simpleweb-1
+simpleweb-1  | [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+simpleweb-1  | 
+simpleweb-1  | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+simpleweb-1  |  - using env:    export GIN_MODE=release
+simpleweb-1  |  - using code:   gin.SetMode(gin.ReleaseMode)
+simpleweb-1  | 
+simpleweb-1  | [GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+simpleweb-1  | [GIN-debug] Listening and serving HTTP on :8080
+simpleweb-1  | [GIN] 2024/04/22 - 06:22:33 | 200 |     156.959µs |      172.22.0.1 | GET      "/"
+simpleweb-1  | [GIN] 2024/04/22 - 06:22:34 | 200 |      37.945µs |      172.22.0.1 | GET      "/favicon.ico"
+simpleweb-1  | [GIN] 2024/04/22 - 06:22:44 | 200 |     150.115µs |      172.22.0.1 | GET      "/"

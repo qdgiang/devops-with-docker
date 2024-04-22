@@ -1,0 +1,14 @@
+❯ docker compose up
+WARN[0000] /home/giang/Desktop/devops-with-docker/part2/2.01/docker-compose.yml: `version` is obsolete 
+[+] Running 0/1
+ ⠹ Container 201-my-simple-web-1  Recreated                                                                                                                          0.2s 
+Attaching to my-simple-web-1
+my-simple-web-1  | Starting log output
+my-simple-web-1  | Wrote text to /usr/src/app/text.log
+my-simple-web-1  | Wrote text to /usr/src/app/text.log
+my-simple-web-1  | Wrote text to /usr/src/app/text.log
+my-simple-web-1  | Wrote text to /usr/src/app/text.log
+my-simple-web-1  | Wrote text to /usr/src/app/text.log
+  Gracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 1/1
+ ✔ Container 201-my-simple-web-1  Stopped       
