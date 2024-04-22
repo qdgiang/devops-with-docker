@@ -1,0 +1,56 @@
+❯ docker compose up
+WARN[0000] /home/giang/Desktop/devops-with-docker/part2/2.04/docker-compose.yml: `version` is obsolete 
+[+] Running 9/9
+ ✔ my-redis Pulled                                                                                                                                                  40.8s 
+   ✔ 13808c22b207 Pull complete                                                                                                                                     28.7s 
+   ✔ 6900ab66c9ff Pull complete                                                                                                                                      1.5s 
+   ✔ d707ec7ebe0f Pull complete                                                                                                                                      1.4s 
+   ✔ 031016405bfb Pull complete                                                                                                                                      5.4s 
+   ✔ 84b54dfd90f6 Pull complete                                                                                                                                     16.0s 
+   ✔ 6d2bba2ab923 Pull complete                                                                                                                                      9.4s 
+   ✔ 4f4fb700ef54 Pull complete                                                                                                                                     12.4s 
+   ✔ 09073cda9bdf Pull complete                                                                                                                                     15.3s 
+[+] Running 1/4
+ ✔ Network 204_default       Created                                                                                                                                 0.4s 
+ ⠏ Container 204-my-redis-1  Created                                                                                                                                 0.9s 
+ ⠏ Container 204-frontend-1  Created                                                                                                                                 0.9s 
+ ⠏ Container 204-backend-1   Created                                                                                                                                 0.9s 
+Attaching to backend-1, frontend-1, my-redis-1
+my-redis-1  | 1:C 22 Apr 2024 07:01:34.988 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+my-redis-1  | 1:C 22 Apr 2024 07:01:34.988 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+my-redis-1  | 1:C 22 Apr 2024 07:01:34.988 * Redis version=7.2.4, bits=64, commit=00000000, modified=0, pid=1, just started
+backend-1   | [Ex 2.4+] Initializing redis client
+my-redis-1  | 1:C 22 Apr 2024 07:01:34.988 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+my-redis-1  | 1:M 22 Apr 2024 07:01:34.989 * monotonic clock: POSIX clock_gettime
+my-redis-1  | 1:M 22 Apr 2024 07:01:34.990 * Running mode=standalone, port=6379.
+my-redis-1  | 1:M 22 Apr 2024 07:01:34.992 * Server initialized
+my-redis-1  | 1:M 22 Apr 2024 07:01:34.992 * Ready to accept connections tcp
+backend-1   | [Ex 2.4+] Connection to redis initialized, ready to ping pong.
+backend-1   | [Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+backend-1   | [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+backend-1   | 
+backend-1   | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+backend-1   |  - using env:     export GIN_MODE=release
+backend-1   |  - using code:    gin.SetMode(gin.ReleaseMode)
+backend-1   | 
+backend-1   | [GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+backend-1   | [GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+backend-1   | [GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+backend-1   | [GIN-debug] Listening and serving HTTP on :8080
+frontend-1  |  WARN  Checking for updates failed (use `--debug` to see full error)
+frontend-1  |  INFO  Accepting connections at http://localhost:5000
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 GET /
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 Returned 304 in 60 ms
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 GET /static/css/main.eaa5d75e.chunk.css
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 Returned 304 in 6 ms
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 GET /static/js/2.43ca3586.chunk.js
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 GET /static/js/main.04d687dc.chunk.js
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 Returned 200 in 8 ms
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 Returned 304 in 13 ms
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 GET /static/media/toskalogo.c0f35cf0.svg
+frontend-1  |  HTTP  4/22/2024 7:01:46 AM 172.24.0.1 Returned 200 in 1 ms
+backend-1   | [GIN] 2024/04/22 - 07:01:48 | 200 |     193.103µs |      172.24.0.1 | GET      "/ping"
+backend-1   | ping pong
+backend-1   | [GIN] 2024/04/22 - 07:01:48 | 200 |     676.253µs |      172.24.0.1 | GET      "/ping?redis=true"
+backend-1   | [GIN] 2024/04/22 - 07:01:58 | 501 |      58.959µs |      172.24.0.1 | GET      "/ping?postgres=true"
+frontend-1  |  HTTP  4/22/2024 7:02:01 AM 172.24.0.1 GET /api/ping
