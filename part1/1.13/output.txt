@@ -1,0 +1,47 @@
+❯ docker build . -t my-backend
+[+] Building 26.9s (10/10) FINISHED                                                                                                                        docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                 0.0s
+ => => transferring dockerfile: 257B                                                                                                                                 0.0s
+ => [internal] load metadata for docker.io/library/golang:1.16                                                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                                                    0.0s
+ => => transferring context: 170B                                                                                                                                    0.0s
+ => [internal] load build context                                                                                                                                    0.0s
+ => => transferring context: 9.86kB                                                                                                                                  0.0s
+ => [1/5] FROM docker.io/library/golang:1.16                                                                                                                         0.0s
+ => CACHED [2/5] WORKDIR /backend                                                                                                                                    0.0s
+ => [3/5] COPY . .                                                                                                                                                   0.3s
+ => [4/5] RUN go build                                                                                                                                              18.3s
+ => [5/5] RUN go test ./...                                                                                                                                          5.7s 
+ => exporting to image                                                                                                                                               2.3s 
+ => => exporting layers                                                                                                                                              2.3s 
+ => => writing image sha256:fbcfa342fbd2dc1bd77c772d2ae7f423dae1bc27ad65911c2608dd188b1213be                                                                         0.0s 
+ => => naming to docker.io/library/my-backend                                                                                                                        0.0s 
+❯ docker run -p 8080:8000 my-backend
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+^C%                                                                                                                                                                       ❯ docker run -p 8080:8080 my-backend
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2024/04/19 - 07:15:29 | 404 |     203.962µs |      172.17.0.1 | GET      "/"
+[GIN] 2024/04/19 - 07:15:30 | 404 |       8.258µs |      172.17.0.1 | GET      "/favicon.ico"
+[GIN] 2024/04/19 - 07:15:38 | 200 |      25.451µs |      172.17.0.1 | GET      "/ping"

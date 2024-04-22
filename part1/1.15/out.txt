@@ -1,0 +1,9 @@
+❯ docker run -p 8000:8000 qdgiang/devops-with-docker-1-15
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.17.0.1:47128 - "GET /docs HTTP/1.1" 200 OK
+INFO:     172.17.0.1:47128 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33696 - "GET /square/5 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33696 - "GET /favicon.ico HTTP/1.1" 404 Not Found
