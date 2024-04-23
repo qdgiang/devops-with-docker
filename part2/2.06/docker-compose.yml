@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  frontend:
+    image: my-new-frontend
+    ports:
+      - 5000:5000
+
+  backend:
+    image: my-new-backend
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=my-redis
+      - POSTGRES_HOST=postgres_test
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=nice
+      - POSTGRES_DB=postgres
+
+  postgres_test:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=nice
+    restart: unless-stopped
+
+  my-redis:
+    image: redis
+    
