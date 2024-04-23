@@ -1,0 +1,1 @@
+I have to remove defined ENV for connected URLs in previous frontend and backend Dockerfiles, because those point to localhost, and not name of components in the Docker compose -> Created v2 of images
