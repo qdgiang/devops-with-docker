@@ -1,0 +1,26 @@
+❯ docker images
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+slim-frontend   latest    a135305ac4c6   44 seconds ago   1.26GB
+og-frontend     latest    44a8fd9251fa   26 minutes ago   1.27GB
+❯ docker image history slim-frontend
+IMAGE          CREATED              CREATED BY                                      SIZE      COMMENT
+a135305ac4c6   About a minute ago   CMD ["serve" "-s" "-l" "5000" "build"]          0B        buildkit.dockerfile.v0
+<missing>      About a minute ago   EXPOSE map[5000/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      About a minute ago   USER frontend_user                              0B        buildkit.dockerfile.v0
+<missing>      About a minute ago   RUN /bin/sh -c npm install --no-optional && …   353MB     buildkit.dockerfile.v0
+<missing>      About a minute ago   ENV REACT_APP_BACKEND_URL=http://localhost:8…   0B        buildkit.dockerfile.v0
+<missing>      2 days ago           COPY . . # buildkit                             707kB     buildkit.dockerfile.v0
+<missing>      2 days ago           WORKDIR /frontend                               0B        buildkit.dockerfile.v0
+<missing>      7 months ago         /bin/sh -c #(nop)  CMD ["node"]                 0B        
+<missing>      7 months ago         /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B        
+<missing>      7 months ago         /bin/sh -c #(nop) COPY file:4d192565a7220e13…   388B      
+<missing>      7 months ago         /bin/sh -c set -ex   && for key in     6A010…   7.59MB    
+<missing>      7 months ago         /bin/sh -c #(nop)  ENV YARN_VERSION=1.22.19     0B        
+<missing>      7 months ago         /bin/sh -c ARCH= && dpkgArch="$(dpkg --print…   98.5MB    
+<missing>      7 months ago         /bin/sh -c #(nop)  ENV NODE_VERSION=16.20.2     0B        
+<missing>      7 months ago         /bin/sh -c groupadd --gid 1000 node   && use…   334kB     
+<missing>      7 months ago         /bin/sh -c set -ex;  apt-get update;  apt-ge…   510MB     
+<missing>      7 months ago         /bin/sh -c apt-get update && apt-get install…   146MB     
+<missing>      7 months ago         /bin/sh -c set -eux;  apt-get update;  apt-g…   33MB      
+<missing>      7 months ago         /bin/sh -c #(nop)  CMD ["bash"]                 0B        
+<missing>      7 months ago         /bin/sh -c #(nop) ADD file:d9c3e291731c1f06d…   114MB   

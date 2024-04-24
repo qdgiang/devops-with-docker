@@ -1,0 +1,20 @@
+❯ docker images
+REPOSITORY        TAG       IMAGE ID       CREATED              SIZE
+multi-frontend    latest    a358ddcc2d25   About a minute ago   129MB
+alpine-frontend   latest    7acbd4a59e21   10 minutes ago       471MB
+alpine-backend    latest    d0c98cd6f180   13 minutes ago       466MB
+slim-backend      latest    51afe639e8ce   51 minutes ago       1.07GB
+slim-frontend     latest    a135305ac4c6   59 minutes ago       1.26GB
+og-backend        latest    bc37c5bd4bc4   About an hour ago    1.07GB
+og-frontend       latest    44a8fd9251fa   About an hour ago    1.27GB
+❯ docker run -p 5000:5000 multi-frontend
+ INFO  Accepting connections at http://localhost:5000
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 GET /
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 Returned 304 in 60 ms
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 GET /static/css/main.eaa5d75e.chunk.css
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 GET /static/js/2.43ca3586.chunk.js
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 GET /static/js/main.48dc74fa.chunk.js
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 Returned 304 in 19 ms
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 Returned 304 in 14 ms
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 Returned 304 in 21 ms
+ HTTP  4/24/2024 3:43:54 AM 172.17.0.1 GET /static/media/toskalogo.c0f35cf0.svg

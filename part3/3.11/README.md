@@ -1,0 +1,1 @@
+Will update the link to the diagram here after studying K8s a bit more

@@ -1,0 +1,25 @@
+❯ docker images
+REPOSITORY        TAG       IMAGE ID       CREATED             SIZE
+multi-backend     latest    e82ddb533f72   3 minutes ago       18.7MB
+multi-frontend    latest    a358ddcc2d25   15 minutes ago      129MB
+alpine-frontend   latest    7acbd4a59e21   24 minutes ago      471MB
+alpine-backend    latest    d0c98cd6f180   27 minutes ago      466MB
+slim-backend      latest    51afe639e8ce   About an hour ago   1.07GB
+slim-frontend     latest    a135305ac4c6   About an hour ago   1.26GB
+og-backend        latest    bc37c5bd4bc4   2 hours ago         1.07GB
+og-frontend       latest    44a8fd9251fa   2 hours ago         1.27GB
+❯ docker run -p 8080:8080 multi-backend
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2024/04/24 - 03:57:50 | 200 |     143.256µs |      172.17.0.1 | GET      "/ping"
+[GIN] 2024/04/24 - 03:57:53 | 404 |      20.909µs |      172.17.0.1 | GET      "/"

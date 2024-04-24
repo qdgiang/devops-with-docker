@@ -1,0 +1,8 @@
+❯ docker images
+REPOSITORY        TAG       IMAGE ID       CREATED             SIZE
+alpine-frontend   latest    7acbd4a59e21   41 seconds ago      471MB
+alpine-backend    latest    d0c98cd6f180   3 minutes ago       466MB
+slim-backend      latest    51afe639e8ce   41 minutes ago      1.07GB
+slim-frontend     latest    a135305ac4c6   49 minutes ago      1.26GB
+og-backend        latest    bc37c5bd4bc4   About an hour ago   1.07GB
+og-frontend       latest    44a8fd9251fa   About an hour ago   1.27GB
